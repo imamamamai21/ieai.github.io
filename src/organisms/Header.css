@@ -1,0 +1,38 @@
+.header li {
+  width: 50%;
+  display: inline-block;
+}
+
+.header li .headItem {
+  padding: 16px;
+  border-bottom: 2px solid #424941;
+}
+
+.header li input[type='button'] {
+	font: 24px/32px sans-serif;
+  font-weight: bold;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 8px 0;
+	padding: 0.3em;
+	transition: 0.3s;
+	outline: none;
+  background-color: white;
+	border: none;
+  border-bottom: 2px solid rgb(150, 150, 150);
+}
+
+.header li[data-switch='on'] input {
+  color: #424941;
+  border-width: 4px;
+}
+
+.header li[data-switch='off'] input {
+  color: rgb(150, 150, 150);
+}
+
+.header li input:hover {
+  color: #52664f;
+  border-width: 4px;
+  border-color: #52664f;
+}
