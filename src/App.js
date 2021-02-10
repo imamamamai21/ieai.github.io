@@ -32,7 +32,7 @@ export default class App extends Component {
 	render() {
     const { showPage } = this.state;
     return (
-      <Container maxWidth='lg' id='App'>
+      <Container maxWidth='lg'>
         <TopPage show = { showPage.top } />
 
         <Header onClickMenu={this.onClickMenu} target={{
