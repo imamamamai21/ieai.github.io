@@ -13,6 +13,7 @@
     "react-scripts": "4.0.2",
     "web-vitals": "^1.1.0"
   },
+  "homepage": "https://imamamamai21.github.io/portfolio/",
   "scripts": {
     "start": "react-scripts start",
     "build": "rm -r docs && react-scripts build && mv build docs",
