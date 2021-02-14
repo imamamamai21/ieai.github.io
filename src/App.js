@@ -1,9 +1,12 @@
 import React, { Component, useState } from 'react';
 import { Container, makeStyles } from '@material-ui/core';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import TopPage from './pages/Top';
+import WorksPaswordPage from './pages/WorksPasword';
 import WorksPage from './pages/Works';
 import ProfilePage from './pages/Profile';
+import NotFoundPage from './pages/NotFound';
 
 import Header from './organisms/Header';
 
@@ -33,15 +36,16 @@ export default class App extends Component {
     const { showPage } = this.state;
     return (
       <Container maxWidth='lg'>
-        <TopPage show = { showPage.top } />
-
-        <Header onClickMenu={this.onClickMenu} target={{
-          works: showPage.works,
-          profile: showPage.profile
-        }} />
-
-        <ProfilePage show ={ showPage.profile } />
-        <WorksPage show ={ showPage.works } />
+        <Router>
+          <Header />
+          <Switch>
+            <Route exact path='/' component={TopPage}/>
+            <Route path='/profile' component={ProfilePage}/>
+            <Route path='/works' component={WorksPaswordPage}/>
+            <Route path='/myworks' component={WorksPage}/>
+            <Route component={NotFoundPage}/>
+          </Switch>
+        </Router>
       </Container>
     );
   }

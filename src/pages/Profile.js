@@ -8,14 +8,9 @@ import SelfIntroduction from '../organisms/SelfIntroduction';
 export default class ProfilePage extends Component {
 	constructor (props) {
 		super(props);
-		this.state = {
-			show: props.show
-		};
 	}
 
 	render() {
-		if(!this.props.show) return <div />;
-
 		return (
 			<div id='profilePage'>
 				<SelfIntroduction />

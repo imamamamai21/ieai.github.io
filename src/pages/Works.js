@@ -11,7 +11,6 @@ export default class WorksPage extends Component {
 	}
 
 	render() {
-		if(!this.props.show) return <div />
 		return (
 			<TableContainer>
 				<Table aria-label="works table">

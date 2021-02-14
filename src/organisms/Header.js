@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 import './Header.css';
 import { MENU } from '../constants/Menu';
@@ -27,7 +28,6 @@ export default class Header extends Component {
 			profile: key === 'profile' && !state ? !state : state,
 			works: key === 'works' && !state  ? !state : state
 		}});
-		this.props.onClickMenu(key);
 	}
 
 	render() {
@@ -38,10 +38,12 @@ export default class Header extends Component {
 						Object.keys(this.state.menu).map( (key, i) => {
 							return (
 								<li key={'headMenu' + key} data-switch={this.state.menu[key] ? 'on' : 'off'}>
-									<input
-										type='button' 
-										value={MENU[key]}
-										onClick={() => this.onClickMenu(key)} />
+									<Link to={'/' + key}>
+										<input
+											type='button' 
+											value={MENU[key]}
+											onClick={() => this.onClickMenu(key)} />
+									</Link>
 								</li>
 							)
 						})
