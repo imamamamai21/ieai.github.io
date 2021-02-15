@@ -1,4 +1,5 @@
 import React, { Component, useState } from 'react';
+import { withStyles } from '@material-ui/styles';
 import { Container, makeStyles } from '@material-ui/core';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -8,9 +9,7 @@ import WorksPage from './pages/Works';
 import ProfilePage from './pages/Profile';
 import NotFoundPage from './pages/NotFound';
 
-import Header from './organisms/Header';
-
-export default class App extends Component {
+class App extends Component {
   constructor (props) {
 		super(props);
 		this.state = {
@@ -34,10 +33,10 @@ export default class App extends Component {
 
 	render() {
     const { showPage } = this.state;
+    const classes = this.props.classes;
     return (
       <Container maxWidth='lg'>
         <Router>
-          <Header />
           <Switch>
             <Route exact path='/' component={TopPage}/>
             <Route path='/profile' component={ProfilePage}/>
@@ -47,6 +46,9 @@ export default class App extends Component {
           </Switch>
         </Router>
       </Container>
-    );
+    )
   }
 }
+
+export default withStyles({
+})(App);
