@@ -142,13 +142,11 @@ export default function Header(props) {
 					</div>
 			</h1>
 			<div className={classes.rightItems}>
-			
-				{/* <MenuButton menu={MENU.profile} /> */}
 					<div className={classes.menuLink}>
 						<MenuButton menu={MENU.works} />
 					</div>
-					<Link className={classes.topLink} to='/'>
-						<img src={topLink} alt="PORTFOLIO" />
+					<Link className={classes.topLink} to={MENU.top.uri}>
+						<img src={topLink} alt={MENU.top.content} />
 					</Link>
 			</div>
 		</div>

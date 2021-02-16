@@ -9,6 +9,8 @@ import WorksPage from './pages/Works';
 import ProfilePage from './pages/Profile';
 import NotFoundPage from './pages/NotFound';
 
+import { MENU } from './static/constants/Menu';
+
 class App extends Component {
   constructor (props) {
 		super(props);
@@ -38,11 +40,11 @@ class App extends Component {
       <Container maxWidth='lg'>
         <Router>
           <Switch>
-            <Route exact path='portfolio/' component={TopPage}/>
-            <Route path='portfolio/profile' component={ProfilePage}/>
-            <Route path='portfolio/works' component={WorksPaswordPage}/>
-            <Route path='portfolio/myworks' component={WorksPage}/>
-            <Route component={NotFoundPage}/>
+            <Route exact path={MENU.top.uri} component={ TopPage }/>
+            <Route path={MENU.profile.uri} component={ ProfilePage }/>
+            <Route path={MENU.works.uri} component={ WorksPaswordPage }/>
+            <Route path={MENU.myworks.uri} component={ WorksPage }/>
+            <Route component={ NotFoundPage }/>
           </Switch>
         </Router>
       </Container>

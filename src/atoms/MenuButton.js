@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 export default function MenuButton(props) {
   const classes = useStyles();
   return (
-		<Link className={classes.manu} to={'/' + props.menu.key}>
+		<Link className={classes.manu} to={props.menu.uri}>
 			<div className='content'>
 					<p>{props.menu.content}</p>
 					<PointText text={props.menu.title}/>
