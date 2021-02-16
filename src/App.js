@@ -38,10 +38,10 @@ class App extends Component {
       <Container maxWidth='lg'>
         <Router>
           <Switch>
-            <Route exact path='/' component={TopPage}/>
-            <Route path='/profile' component={ProfilePage}/>
-            <Route path='/works' component={WorksPaswordPage}/>
-            <Route path='/myworks' component={WorksPage}/>
+            <Route exact path='portfolio/' component={TopPage}/>
+            <Route path='portfolio/profile' component={ProfilePage}/>
+            <Route path='portfolio/works' component={WorksPaswordPage}/>
+            <Route path='portfolio/myworks' component={WorksPage}/>
             <Route component={NotFoundPage}/>
           </Switch>
         </Router>
