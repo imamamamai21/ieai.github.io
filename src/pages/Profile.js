@@ -14,7 +14,7 @@ export default class ProfilePage extends Component {
 	render() {
 		return (
 			<div id='profilePage'>
-				<Header />
+				<Header inPageKey='profile' />
 				<SelfIntroduction />
 			</div>
 		);

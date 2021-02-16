@@ -8,6 +8,7 @@ import MenuButton from "../atoms/MenuButton";
 
 import topTitle from "../static/images/topTitle.png";
 import pointCircle from "../static/images/pointCircle.png";
+import { SKILLS } from "../static/constants/Skills";
 
 const useStyles = makeStyles((theme) => ({
 	topTitle: {
@@ -81,10 +82,9 @@ export default function TopPAge(props) {
 				<div className={classes.constent}>
 					<div className='contentText'>
 						<PointText text={`My Skills >>>>>>>>>`} />
-						<PointText text='for Web : JavaScript / React / Redux / jQuery' />
-						<PointText text='for iOS : Swift / rxSwift' />
-						<PointText text='Others : AcrionScript / Unity / TypeScript' />
-						<PointText text='Design sofware : Adobe illustrator / Photoshop / Premire pro / After Effects / Sketch' />
+						{
+							SKILLS.map((skill) => <PointText text={skill} />)
+						}
 					</div>
 				</div>
 			</Grid>

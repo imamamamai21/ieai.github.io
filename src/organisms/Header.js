@@ -53,7 +53,6 @@
 // }
 
 import { makeStyles } from '@material-ui/styles';
-import { Grid, Container } from '@material-ui/core';
 import { Link } from 'react-router-dom'
 
 import headerTitle from "../static/images/headerTitle.png";
@@ -129,21 +128,26 @@ const useStyles = makeStyles((theme) => ({
 
 /**
  * 
- * @param {menu} props = import { MENU } from '../static/constants/Menu';
+ * @param {inPageKey} props 今いるページ 'profile' || 'works' || 'notFound'
  */
 export default function Header(props) {
   const classes = useStyles();
+	const inMenu = MENU[props.inPageKey];
+
+	var menu = { profile: MENU.profile, works: MENU.works };
+	delete menu[props.inPageKey];
+	
   return (
 		<div className={classes.header}>
 			<h1 className={classes.title}>
 					<div className='titleContent'>
-						<PointText text={MENU.profile.title}/>
-						<p>{MENU.profile.content}</p>
+						<PointText text={inMenu.title}/>
+						<p>{inMenu.content}</p>
 					</div>
 			</h1>
 			<div className={classes.rightItems}>
 					<div className={classes.menuLink}>
-						<MenuButton menu={MENU.works} />
+						{ Object.keys(menu).map((key) => (<MenuButton menu={ menu[key] } />)) }
 					</div>
 					<Link className={classes.topLink} to={MENU.top.uri}>
 						<img src={topLink} alt={MENU.top.content} />

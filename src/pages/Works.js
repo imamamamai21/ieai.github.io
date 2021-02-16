@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ChronologyParts from '../organisms/ChronologyParts';
-import { Table, TableCell, TableBody, TableContainer, TableHead, TableRow, Button, ButtonBase, Typography, Link, Grid, SvgIcon } from '@material-ui/core';
+import { Table, TableCell, TableBody, TableContainer, TableHead, TableRow } from '@material-ui/core';
+
+import Header from '../organisms/Header';
 
 /**
  * @props : show Boolean
@@ -12,21 +14,24 @@ export default class WorksPage extends Component {
 
 	render() {
 		return (
-			<TableContainer>
-				<Table aria-label="works table">
-					<TableHead>
-						<TableRow>
-							<TableCell>Year</TableCell>
-							<TableCell>Service</TableCell>
-							<TableCell>Comment</TableCell>
-							<TableCell>Skills</TableCell>
-						</TableRow>
-					</TableHead>
-					<TableBody>
-						{ CONTENT_SET.map((item) => (<ChronologyParts item={item} />)) }
-					</TableBody>
-				</Table>
-			</TableContainer>
+			<div className="worksPage">
+				<Header inPageKey='works' />
+				<TableContainer>
+					<Table aria-label="works table">
+						<TableHead>
+							<TableRow>
+								<TableCell>Year</TableCell>
+								<TableCell>Service</TableCell>
+								<TableCell>Comment</TableCell>
+								<TableCell>Skills</TableCell>
+							</TableRow>
+						</TableHead>
+						<TableBody>
+							{ CONTENT_SET.map((item) => (<ChronologyParts item={item} />)) }
+						</TableBody>
+					</Table>
+				</TableContainer>
+			</div>
 		);
 	}
 }

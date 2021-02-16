@@ -4,7 +4,7 @@ import { Container, makeStyles } from '@material-ui/core';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import TopPage from './pages/Top';
-import WorksPaswordPage from './pages/WorksPasword';
+import WorksPasswordPage from './pages/WorksPassword';
 import WorksPage from './pages/Works';
 import ProfilePage from './pages/Profile';
 import NotFoundPage from './pages/NotFound';
@@ -42,7 +42,7 @@ class App extends Component {
           <Switch>
             <Route exact path={MENU.top.uri} component={ TopPage }/>
             <Route path={MENU.profile.uri} component={ ProfilePage }/>
-            <Route path={MENU.works.uri} component={ WorksPaswordPage }/>
+            <Route path={MENU.works.uri} component={ WorksPasswordPage }/>
             <Route path={MENU.myworks.uri} component={ WorksPage }/>
             <Route component={ NotFoundPage }/>
           </Switch>

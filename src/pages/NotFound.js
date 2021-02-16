@@ -16,7 +16,7 @@ export default function NotFoundPage(props) {
 	const classes = useStyles();
 	return (
 		<div class='notFoundPage'>
-			<Header />
+			<Header inPageKey='notFound' />
 			<Container maxWidth="sm" className={classes.root}>
 				<PointText text="404 Not Found." />
 				<Typography variant="body2" color="textSecondary">
