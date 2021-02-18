@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
-import { TextField, Container, Button, Typography } from '@material-ui/core';
+import { TextField, Container, Button, Typography, Box } from '@material-ui/core';
 
 import Header from '../organisms/Header';
+import Page from "../templates/Page";
+import PointText from "../atoms/PointText";
 
 class WorksPasswordPage extends Component {
 	constructor (props) {
@@ -19,10 +21,11 @@ class WorksPasswordPage extends Component {
 	render() {
 		const classes = this.props.classes;
 		return (
-			<div className="worksPasswordPage">
-				<Header inPageKey="works" />
+			<Page inPageKey='works' className="worksPasswordPage">
 				<Container maxWidth="sm">
-					<Typography variant="h4">Please Password!</Typography>
+					<Box className={ classes.title }>
+						<PointText variant='h2'>Please Password!</PointText>
+					</Box>
 					<Typography variant="body2" color="textSecondary">
 						業務履歴を見るためには、パスワードをご入力ください。
 					</Typography>
@@ -46,12 +49,17 @@ class WorksPasswordPage extends Component {
 						</Link>
 					</Button>
 				</Container>
-			</div>
+			</Page>
 		)
 	}
 }
 
 export default withStyles({
+	title: {
+		textAlign: 'center',
+		padding: '40px 0',
+		'& h2': { fontSize: '32px' }
+	},
 	input: {
 		marginTop: '24px'
 	},

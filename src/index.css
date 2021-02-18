@@ -4,9 +4,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #350026;
+  background-color: #f4f4f3;
 }
 
 ul {
   list-style: none;
   padding-inline-start: 0;
+}
+
+.MuiContainer-root {
+  padding: 0 !important;
+  margin-top: -15px;
 }

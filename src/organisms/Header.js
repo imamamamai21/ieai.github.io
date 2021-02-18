@@ -66,32 +66,12 @@ import topLink from '../static/images/topLink.png';
 const useStyles = makeStyles((theme) => ({
 	header: {
 		width: '100%',
-		// height: '132px',
+		height: '300px',
 		borderBottom: '3px solid #350026',
-		marginBottom: '32px',
+		// marginBottom: '32px',
 		position: 'relative',
-
-		// textDecoration: 'none',
-		// color: 'currentColor',
-		// '& .content': {
-		// 	width: '160px',
-		// 	height: '60px',
-		// 	padding: '0 0 0 40px',
-		// 	'& h6': {
-			// 		marginTop: '-8px',
-			// 		fontSize: '32px',
-			// 	},
-			// 	'& p': {
-				// 		fontSize: '12px',
-				// 		marginBlockEnd: '0'
-				// 	}
-				// },
-				// '&:hover': {
-					// 	opacity: '0.6',
-					// 	// '& .content': {
-						// 	// 	width: '200px'
-						// 	// }
-						// }
+		top: '0',
+		left: '0'
 	},
 	width: '306px',
 	title: {
@@ -136,7 +116,7 @@ export default function Header(props) {
 
 	var menu = { profile: MENU.profile, works: MENU.works };
 	delete menu[props.inPageKey];
-	
+
   return (
 		<div className={classes.header}>
 			<h1 className={classes.title}>

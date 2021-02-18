@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ChronologyParts from '../organisms/ChronologyParts';
 import { Table, TableCell, TableBody, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
 
-import Header from '../organisms/Header';
+import Page from "../templates/Page";
 import PointText from '../atoms/PointText';
 
 import { WOKRS_DATA } from '../static/constants/WorksData';
@@ -17,8 +17,7 @@ export default class WorksPage extends Component {
 
 	render() {
 		return (
-			<div className="worksPage">
-				<Header inPageKey='works' />
+			<Page inPageKey='works' className="worksPage"> 
 				<TableContainer>
 					<Table aria-label="works table">
 						<TableHead>
@@ -37,7 +36,7 @@ export default class WorksPage extends Component {
 						</TableBody>
 					</Table>
 				</TableContainer>
-			</div>
+			</Page>
 		);
 	}
 }

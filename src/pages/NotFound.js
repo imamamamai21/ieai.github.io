@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/styles';
 import { Link } from 'react-router-dom';
 import { Container, Button, Typography } from '@material-ui/core';
 
-import Header from '../organisms/Header';
+import Page from '../templates/Page';
 import PointText from '../atoms/PointText';
 
 const useStyles = makeStyles((theme) => ({
@@ -15,8 +15,7 @@ const useStyles = makeStyles((theme) => ({
 export default function NotFoundPage(props) {
 	const classes = useStyles();
 	return (
-		<div class='notFoundPage'>
-			<Header inPageKey='notFound' />
+		<Page class='notFoundPage' inPageKey='notFound'>
 			<Container maxWidth="sm" className={classes.root}>
 				<PointText text="404 Not Found." />
 				<Typography variant="body2" color="textSecondary">
@@ -26,6 +25,6 @@ export default function NotFoundPage(props) {
 					戻って再度お試しください。
 				</Typography>
 			</Container>
-		</div>
+		</Page>
 	);
 }
