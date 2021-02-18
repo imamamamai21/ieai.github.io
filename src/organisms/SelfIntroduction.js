@@ -4,6 +4,8 @@ import Icon from '@material-ui/core/Icon';
 
 import myimage from "../static/images/myimage.jpg";
 
+import { SKILLS } from "../static/constants/Skills";
+
 const useStyles = makeStyles((theme) => ({
 	img: {
 		margin: 'auto',
@@ -82,11 +84,8 @@ const COMMENT = [
 	'エンジニアの世界は広く、足を踏み入れれば踏み入れるほど、多数の可能性が発見できます。'
 ]
 
-const MY_SKILLS = [
-	'JavaScript / React / redux / jQuery', 'TypeScript', 'Swift / rxSwift'
-]
 const INT_ITEMS = [
 	{ titie: '', details: COMMENT },
 	{ title: '経歴', details: MY_HISTORY },
-	{ title: 'スキルセット', details: MY_SKILLS }
+	{ title: 'スキルセット', details: SKILLS }
 ];

@@ -3,7 +3,7 @@ import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
 	text: {
-		fontFamily: `'Odibee Sans', cursive`,
+		fontFamily: `'Odibee Sans', cursive, 'Sawarabi Gothic', sans-serif`,
 		fontSize: '18px'
 	}
 }));

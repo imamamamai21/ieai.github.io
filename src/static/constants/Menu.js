@@ -19,7 +19,7 @@ export const MENU = {
   },
   myworks:{
     key: 'myworks',
-    content: 'お仕事履歴',
+    content: '仕事履歴',
     title: 'WORKS',
     uri: '/portfolio/myworks'
   },
