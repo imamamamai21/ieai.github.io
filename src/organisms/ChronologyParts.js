@@ -1,24 +1,31 @@
+import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import { Box, ButtonBase, Typography, Link, Grid, SvgIcon } from '@material-ui/core';
-import { Table, TableCell, TableBody, TableContainer, TableHead, TableRow } from '@material-ui/core';
-import Icon from '@material-ui/core/Icon';
+import { Box, Typography, Link, Grid, SvgIcon } from '@material-ui/core';
+import { TableCell, Icon, TableRow } from '@material-ui/core';
 
-import myimage from "../static/images/myimage.jpg";
+import PointText from '../atoms/PointText';
 
 const useStyles = makeStyles((theme) => ({
-	serviceIcon: {
+	serviceContent: {
+		'& h6': { fontSize: '24px' }
+	}, serviceIcon: {
 		margin: 'auto',
 		display: 'block',
 		maxWidth: '200px'
 	}, skillIcon: {
-		maxWidth: '80px',
+		height: '80px',
 	}, profLink: {
 		paddingLeft: '16px',
 		'& .material-icons': {
 			fontSize: '16px',
 			padding: '0 4px 0 0'
 		}
-	}
+	},
+	openIcon: { fontSize: '12px' },
+	skillRoot: {
+    flexGrow: 1,
+		paddingTop: '16px'
+  }
 }));
 
 /**
@@ -26,56 +33,54 @@ const useStyles = makeStyles((theme) => ({
  */
 export default function ChronologyParts(props) {
   const classes = useStyles();
+	const [spacing, setSpacing] = React.useState(2);
 	const item = props.item;
-	console.log('item===',props.item)
   return (
 		<TableRow key={item.key}>
 			<TableCell component="th" scope="row">
-				<Typography variant='h5'>{ item.year }</Typography>
+				<PointText text={ item.year } />
 			</TableCell>
 			<TableCell>{/* サービス */}
-				<Typography variant='subtitle1'>
-					<Link href={item.serviceLink} target='_blank'>
-						{item.service.name}
-						<img className={classes.serviceIcon} alt={item.key} src={item.service.icon}/>
-					</Link>
-					<Typography variant='caption'>{item.service.content}</Typography>
-				</Typography>
+				{ item.service.link != '' ?
+					(<Link href={item.service.link} target='_blank'>
+						<PointText text={ item.service.name } />
+						{ item.serviceIcon != '' ?
+							<img className={classes.serviceIcon} alt={item.key} src={item.service.icon}/> : <div />
+						}
+						</Link>
+					) : <PointText text={ item.service.name } />
+				}
+				<Typography variant='caption'>{ item.service.content }</Typography>
 			</TableCell>
-			<TableCell>{/* 説明 */}
-				<Typography variant='dody2'>{item.comment}</Typography>
+			<TableCell>
+			{/* 説明 */
+				item.comments.map((comment) => <Typography variant='subtitle2'>{comment}</Typography>)
+			}
+				<Grid container className={classes.skillRoot} spacing={2}>
+					<Grid item xs={12}>
+						<Grid container justify="left" spacing={spacing}>
+							{/* スキル */
+							item.skills.map((skill, i) => (
+								<Grid key={'skill' + i} item>
+									<img className={classes.skillIcon} alt={skill.name} src={skill.icon} />
+									<Typography variant='subtitle2' color='textSecondary'>{skill.name}</Typography>
+								</Grid>
+							))}
+						</Grid>
+					</Grid>
+				</Grid>
 			</TableCell>
-			<TableCell>{/* スキル */}
-				{item.skills.map((skill) => (
-					<Box>
-						<img className={classes.skillIcon} alt={skill.name} src={skill.icon} />
-						<Typography variant='caption' color='textSecondary'>{skill.name}</Typography>
-					</Box>
-				))}
-			</TableCell>
+			<TableCell>{/* ソース */
+				(item.sources.length === 0) ? 
+					<Typography variant='subtitle2'>なし</Typography> :
+					item.sources.map((source) => {
+						return (<Link href={source.uri} target='_blank'>
+							<Typography variant='subtitle2'>
+								<Icon className={classes.openIcon}>open_in_new</Icon>{ source.title }
+							</Typography>
+						</Link>)
+					})
+			}</TableCell>
 		</TableRow>
-		/*
-		<Grid className='chronologyParts' container spacing={4}>
-			<Grid item>
-				<Typography variant='h4'>2013</Typography>
-			</Grid>
-			<Grid item>
-				<img className={classes.img} alt='enbu' src='https://i.ytimg.com/vi/UaNgJkSyofk/maxresdefault.jpg'/>
-				<Typography variant='h5'>
-					<Link href='https://www.sumzap.co.jp/service/sengokuenbu/#page-top'>戦国炎舞</Link>
-				</Typography>
-				<Typography variant='dody2'>
-					言語：ActionScript [AIRアプリ]
-				</Typography>
-			</Grid>
-			<Grid item xs={12} sm container>
-				<Typography variant='dody2'>
-					就職して初めて関わったサービスはゲームでした。ActionScript
-				</Typography>
-			</Grid>
-			<Grid item>
-				<img className={classes.img} alt='photo' src='https://www.globalonlinetrainings.com/wp-content/uploads/2015/12/ActionScript-3.0-training-.jpg'/>
-			</Grid>
-		</Grid>*/
   );
 }

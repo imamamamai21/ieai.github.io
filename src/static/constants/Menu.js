@@ -3,7 +3,8 @@ export const MENU = {
     key: 'top',
     content: 'PORTFOLIO',
     title: 'MAI SHINTSU',
-    uri: '/portfolio/'
+    uri: '/portfolio/',
+    icon: 'adjust'
   },
   profile: {
     key: 'profile',
@@ -13,13 +14,14 @@ export const MENU = {
   },
   works:{
     key: 'works',
-    content: 'お仕事履歴',
+    content: '仕事履歴',
     title: 'WORKS',
-    uri: '/portfolio/works'
+    uri: '/portfolio/works',
+    icon: 'assignment'
   },
   myworks:{
     key: 'myworks',
-    content: 'お仕事履歴',
+    content: '仕事履歴',
     title: 'WORKS',
     uri: '/portfolio/myworks'
   },
