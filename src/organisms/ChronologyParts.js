@@ -1,20 +1,32 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import { Box, Typography, Link, Grid, SvgIcon } from '@material-ui/core';
-import { TableCell, Icon, TableRow } from '@material-ui/core';
+import { Box, Typography, Link, Grid } from '@material-ui/core';
+import { Icon } from '@material-ui/core';
 
 import PointText from '../atoms/PointText';
+import SkillIcon from '../atoms/SkillIcon';
+import YearContent from '../atoms/YearContent';
+import ImageCaption from '../atoms/ImageCaption';
 
 const useStyles = makeStyles((theme) => ({
+	chronologyParts: {
+		'& li': {
+			listStyle: 'none', margin: '0 auto'
+		},
+		'& .MuiGrid-spacing-xs-8': {
+			'& .MuiGrid-item': { padding: '0 32px'},
+			margin: 0
+		}
+	},
 	serviceContent: {
 		'& h6': { fontSize: '24px' }
-	}, serviceIcon: {
+	},
+	serviceIcon: {
 		margin: 'auto',
 		display: 'block',
 		maxWidth: '200px'
-	}, skillIcon: {
-		height: '80px',
-	}, profLink: {
+	},
+	profLink: {
 		paddingLeft: '16px',
 		'& .material-icons': {
 			fontSize: '16px',
@@ -24,8 +36,11 @@ const useStyles = makeStyles((theme) => ({
 	openIcon: { fontSize: '12px' },
 	skillRoot: {
     flexGrow: 1,
-		paddingTop: '16px'
-  }
+		padding: '32px 0',
+		'& .MuiGrid-item': { padding: '0 8px !important' },
+		'& .MuiGrid-spacing-xs-4': { margin: 0 }
+  },
+	contentBox: { padding: '60px 0' }
 }));
 
 /**
@@ -33,54 +48,52 @@ const useStyles = makeStyles((theme) => ({
  */
 export default function ChronologyParts(props) {
   const classes = useStyles();
-	const [spacing, setSpacing] = React.useState(2);
 	const item = props.item;
   return (
-		<TableRow key={item.key}>
-			<TableCell component="th" scope="row">
-				<PointText text={ item.year } />
-			</TableCell>
-			<TableCell>{/* サービス */}
-				{ item.service.link != '' ?
-					(<Link href={item.service.link} target='_blank'>
-						<PointText text={ item.service.name } />
-						{ item.serviceIcon != '' ?
-							<img className={classes.serviceIcon} alt={item.key} src={item.service.icon}/> : <div />
-						}
-						</Link>
-					) : <PointText text={ item.service.name } />
-				}
-				<Typography variant='caption'>{ item.service.content }</Typography>
-			</TableCell>
-			<TableCell>
-			{/* 説明 */
-				item.comments.map((comment) => <Typography variant='subtitle2'>{comment}</Typography>)
-			}
-				<Grid container className={classes.skillRoot} spacing={2}>
-					<Grid item xs={12}>
-						<Grid container justify="left" spacing={spacing}>
-							{/* スキル */
-							item.skills.map((skill, i) => (
-								<Grid key={'skill' + i} item>
-									<img className={classes.skillIcon} alt={skill.name} src={skill.icon} />
-									<Typography variant='subtitle2' color='textSecondary'>{skill.name}</Typography>
-								</Grid>
-							))}
+		<li key={item.key} className={ classes.chronologyParts }>
+			<Grid container spacing={ 8 }>
+				<Grid item xs='1'>
+					<YearContent year={ item.year } />
+				</Grid>			
+				<Grid item xs='3'>{/* サービスイメージ */}
+					<Box className={ classes.contentBox }>
+					{ item.service.link != '' ?
+						(<Link href={item.service.link} target='_blank'>
+							<ImageCaption service={ item.service } />
+						</Link>) :
+						<ImageCaption service={ item.service } />
+					}
+					</Box>
+				</Grid>
+				<Grid item xs='5'>{/* 説明 */}
+					<Box className={ classes.contentBox }>
+						{ item.comments.map((comment) => <Typography variant='subtitle2'>{comment}</Typography>) }
+					<Grid container className={classes.skillRoot} spacing={2}>
+						<Grid item xs={12}>
+						<PointText text='Skills used' />
+							<Grid container justify="left" spacing={4}>
+								{/* スキル */
+								item.skills.map((skill, i) => <SkillIcon skill={ skill } />)
+								}
+							</Grid>
 						</Grid>
 					</Grid>
+					</Box>
 				</Grid>
-			</TableCell>
-			<TableCell>{/* ソース */
-				(item.sources.length === 0) ? 
-					<Typography variant='subtitle2'>なし</Typography> :
-					item.sources.map((source) => {
-						return (<Link href={source.uri} target='_blank'>
-							<Typography variant='subtitle2'>
-								<Icon className={classes.openIcon}>open_in_new</Icon>{ source.title }
-							</Typography>
-						</Link>)
-					})
-			}</TableCell>
-		</TableRow>
+				<Grid item xs='2'>{/* ソース */}
+					<Box className={ classes.contentBox }>
+						{(item.sources.length === 0) ? 
+							<Typography variant='subtitle2' /> :
+							item.sources.map((source) => {
+								return (<Link href={source.uri} target='_blank'>
+									<Typography variant='subtitle2'>
+										<Icon className={classes.openIcon}>open_in_new</Icon>{ source.title }
+									</Typography>
+								</Link>)
+							})}
+						</Box>
+				</Grid>
+			</Grid>
+		</li>
   );
 }

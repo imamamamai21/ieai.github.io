@@ -1,27 +1,40 @@
-import { makeStyles } from '@material-ui/styles';
+import { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import { withStyles } from '@material-ui/styles';
 import { Container } from '@material-ui/core';
 
 import GlobalHeader from '../organisms/GlobalHeader';
 
-const useStyles = makeStyles((theme) => ({
+class Page extends Component {
+	componentDidMount() {
+		window.scrollTo(0, 0);
+	}
+
+  componentDidUpdate(prevProps) {
+		window.scrollTo(0, 0);
+  }
+
+	render() {
+    const classes = this.props.classes;
+    return (
+			<Container className={ classes.page }>
+				<GlobalHeader inPageKey={ this.props.inPageKey } />
+				<div className={ classes.pageContent }>
+					{ this.props.children }
+				</div>
+			</Container>
+    )
+  }
+}
+
+export default withStyles({
 	page: {
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+		maxWidth: 'none'
 	},
 	pageContent: {
 		margin: '40px auto',
-		marginTop: '-850px',
+		marginTop: '-900px',
     paddingBottom: '120px'
 	}
-}));
-
-export default function Page(props) {
-  const classes = useStyles();
-  return (
-		<Container className={ classes.page }>
-			<GlobalHeader inPageKey={ props.inPageKey } />
-			<div className={ classes.pageContent }>
-        { props.children }
-      </div>
-		</Container>
-  );
-}
+})(withRouter(Page));

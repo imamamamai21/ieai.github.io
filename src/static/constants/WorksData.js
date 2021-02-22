@@ -3,12 +3,12 @@ import { SKILLS, SKILL_ICONS } from './Skills';
 export const WOKRS_DATA = [
 	{ ////////////////////// 管理ツール ////////////////////////////////////////////
 		key: 'nuxt',
-		year: '2020',
+		year: ['2020'],
 		service: {
 			name: '管理ツールの再設計',
-			icon: '',
+			icon: `${process.env.PUBLIC_URL}/images/noimage.png`,
 			link: '',
-			content: ''
+			content: 'nuxt.jsでリメイク。'
 		},
 		comments: [
 			'ある社内サービスの管理ツールが古くなったので最新の技術で作り直すこととなりました。',
@@ -26,12 +26,12 @@ export const WOKRS_DATA = [
 		]
 	}, { /////////////////// 自動化ツール //////////////////////////////////////////
 		key: 'gwork',
-		year: '2020-2019',
+		year: ['2020', '2019'],
 		service: {
 			name: '事務作業の自動化',
-			icon: 'https://benri-life.com/wp-content/uploads/2019/02/20170117213517-e1550387142385.png',
+			icon: `${process.env.PUBLIC_URL}/images/noimage.png`,
 			link: '',
-			content: '事務作業の多くを自動化しました。'
+			content: '事務作業の多くを自動化。'
 		},
 		comments: [
 			'産休明けに事務ワークをする部署に異動した時に、人がする作業の多くを自動化しました。',
@@ -40,10 +40,7 @@ export const WOKRS_DATA = [
 			'作った数多くのツールの一部を公開しています。'
 		],
 		skills: [
-			{
-				name: 'GoogleAppsScript',
-				icon: 'https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Apps_Script.png'
-			}, {
+			SKILL_ICONS.gas, {
 				name: 'Kintone Api',
 				icon: 'https://biztel.jp/wp-content/uploads/2020/01/logo_kintone_mark_rgb.png'
 			}
@@ -62,18 +59,18 @@ export const WOKRS_DATA = [
 		]
 	}, { /////////////////// Ameba WEB Remake ////////////////////////////////////
 		key: 'amebaWebRemake',
-		year: '2017',
+		year: ['2018'],
 		service: {
-			name: 'Ameba WEB / Reactリメイク',
+			name: 'Ameba WEB / リメイク',
 			icon: `${process.env.PUBLIC_URL}/images/worksServiceAmebaWebRemake.png`,
 			link: 'https://www.ameba.jp/?sp_redirected=true',
-			content: 'Ameba webアプリ(スマートフォン用)'
+			content: 'Reactによる既存リメイク'
 		},
 		comments: [
 			'Amebaのwebサイトは開発当初ミニマム設計で始まりました。',
 			'それが時を経てその設計のままでは開発コストがかかってしまうということで、設計から作り直すこととなりました。',
 			'はじめは2人で始まり、徐々にメンバーを増やしていきました。',
-			'メンバーを増やす際に勉強会に使った資料の一部をQiitaにまとめています。→リンク'
+			'メンバーを増やす際に勉強会に使った資料の一部をQiitaにまとめています。'
 		],
 		skills: [
 			SKILL_ICONS.react, SKILL_ICONS.reactRouter, SKILL_ICONS.typeScript, SKILL_ICONS.node, SKILL_ICONS.atomicDesign
@@ -86,12 +83,12 @@ export const WOKRS_DATA = [
 		]
 	}, { /////////////////// Ameba WEB ///////////////////////////////////////////
 		key: 'amebaWeb',
-		year: '2015-2017',
+		year: ['2018', '2016'],
 		service: {
-			name: 'Ameba WEB',
-			icon: `${process.env.PUBLIC_URL}/images/worksServiceAmebaWeb.png`,
+			name: 'Ameba WEBアプリ',
+			icon: `${process.env.PUBLIC_URL}/images/worksServiceAmebaWebRemake.png`,
 			link: 'https://www.ameba.jp/?sp_redirected=true',
-			content: 'Ameba webアプリ(スマートフォン用)'
+			content: 'スマホサイト'
 		},
 		comments: [
 			'私が関わったサービスの中で最も歴史あるサービスでした。',
@@ -107,33 +104,34 @@ export const WOKRS_DATA = [
 		sources: []
 	}, { /////////////////// Ameba iOSアプリ //////////////////////////////////////
 		key: 'amebaiOS',
-		year: '2015',
+		year: ['2016'],
 		service: {
 			name: 'Ameba iOSアプリ',
 			icon: `${process.env.PUBLIC_URL}/images/worksServiceAmebaWeb.png`,
 			link: 'https://www.ameba.jp/?sp_redirected=true',
-			content: 'Ameba iOSアプリ'
+			content: 'iOS ネイティブアプリ'
 		},
 		comments: [
-			''
+			'2つ目のiOSサービスでした。既存でswift2.0にアップデートされたばかりで、ObjectCのコードもいくつか残っていました。',
+			'歴史あるサービスですが、アプリ内はWEBビューで賄っているページも多いため作っている部分は少なめでした。'
 		],
 		skills: [
-			SKILL_ICONS.swift
+			SKILL_ICONS.swift, SKILL_ICONS.objectiveC
 		],
 		sources: []
 	}, { /////////////////// AbemaTV iOSアプリ //////////////////////////////////////
 		key: 'abematv',
-		year: '2014-2015',
+		year: ['2016', '2014'],
 		service: {
 			name: 'AbemaTV iOSアプリ',
-			icon: 'https://i0.wp.com/necojita.com/wordpress/wp-content/uploads/2017/06/75284.png?fit=1450%2C813',//'https://3.bp.blogspot.com/-luYlmxTRA_0/Vwy2CLf1iRI/AAAAAAABH-U/edrYpf8j2QsyeifWAP1iuAjcwnMwximFQCLcB/s1600/20160412_abematv-00.png`,
+			icon: `${process.env.PUBLIC_URL}/images/abematv.png`,
 			link: 'https://abema.tv/about/premium?utm_medium=ads&utm_source=google&utm_term=AbemaTV_ex&utm_campaign=%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89%E5%8D%98%E4%BD%93%E5%AE%8C%E5%85%A8%E4%B8%80%E8%87%B4_201023&gclid=Cj0KCQiA962BBhCzARIsAIpWEL3bmHkv3Yj8z0KWSs7CfK-bNnumZQz5K6ztuQBsBGl8mQiHJOWfgPYaAjU3EALw_wcB',
 			content: '無料の動画チャンネル'
 		},
 		comments: [
 			'「新規動画事業を始める」と誘われ、モックを作る段階から関わることができました。',
 			'初めてネイティブアプリ制作に関わったサービスです。',
-			'iOSはライブラリを多く活用でき、自分自身もpod化してライブラリをいくつか作っていました。'
+			'iOSはライブラリを多く活用でき、未熟ながら自分自身もライブラリをいくつか作っていました。(右リンク)'
 		],
 		skills: [
 			SKILL_ICONS.swift, SKILL_ICONS.rxSwift, SKILL_ICONS.typeScript, SKILL_ICONS.objectiveC
@@ -144,11 +142,33 @@ export const WOKRS_DATA = [
 			{title: '[Git]ColorAdjuster', uri: 'https://github.com/ikemai/ColorAdjuster' },
 			{title: '[Git]FullingSwiper', uri: 'https://github.com/ikemai/FullingSwiper'},,
 			{title: '[Git]CastTest', uri: 'https://github.com/ikemai/CastTest'},
-			{ title: '[Qiita]使えば便利なSwiftライブラリたち', uri: 'https://qiita.com/ikemai/items/b98e86213625c652a320' }
+			{title: '[Qiita]使えば便利なSwiftライブラリたち', uri: 'https://qiita.com/ikemai/items/b98e86213625c652a320' }
 		]
-	}, { //////////////////////////////// 戦国炎舞 //////////////////////////////////////////
+	}, { ////////////////////// 新規ゲーム ////////////////////////////////////////////
+		key: 'newGame',
+		year: ['2014'],
+		service: {
+			name: '新規ゲーム開発',
+			icon: `${process.env.PUBLIC_URL}/images/noimage.png`,
+			link: '',
+			content: '社内で初めてUnityを使ったモックをプレゼン'
+		},
+		comments: [
+			'その頃社内(CA子会社)でCocos2d-xかunityか、技術選定が起こっていました。',
+			'そこで両方触ってみた結果、社内で使うなら是非unityを！と有志を集めてunity勉強会をはじめました。',
+			'そうして勉強会メンバーでUnityを使った新規ゲームのモックを作り、社長にプレゼンしました。',
+			'そしてその後新規ゲームを作る際にはモックから関わらせていただくことができました。',
+			'残念ながらそのゲームはお蔵入りとなりましたが、その後はunityを社内のメインの技術として使われていきました。'
+		],
+		skills: [
+			SKILL_ICONS.unity
+		],
+		sources: [
+			{ uri: 'https://github.com/imamamamai21/Nuxt_Vue_Storybook_Atomic', title: '[Git]Nuxt_Vue_Storybook_Atomic' }
+		]
+	},{ //////////////////////////////// 戦国炎舞 //////////////////////////////////////////
 		key: 'sengokuenbu',
-		year: '2013-2015',
+		year: ['2014', '2013'],
 		service: {
 			name: '戦国炎舞 - KIZNA -',
 			icon: 'https://games.app-liv.jp/images/articles/2019/04/gd_399146_-16.jpg',
@@ -158,14 +178,10 @@ export const WOKRS_DATA = [
 		comments: [
 			'就職して初めて関わったサービスはソーシャルゲームでした。',
 			'ActionScriptを使ったAIRアプリです。',
-			'主な担当はアプリのview側の動き。',
-			'時にはアニメーションの作成も行いました。'
+			'主な担当はアプリのview側の動きを。時にはアニメーションの作成も行いました。'
 		],
 		skills: [
-			{
-				name: 'ActionScript',
-				icon: 'https://www.globalonlinetrainings.com/wp-content/uploads/2015/12/ActionScript-3.0-training-.jpg'
-			},
+			SKILL_ICONS.as,
 			{
 				name: 'オブジェクト指向',
 				icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg7T68EZYJH81rqTKX7EnnJ_hmrVzBuIBKpA&usqp=CAU'

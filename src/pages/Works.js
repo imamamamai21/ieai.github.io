@@ -1,42 +1,48 @@
-import React, { Component } from 'react';
-import ChronologyParts from '../organisms/ChronologyParts';
-import { Table, TableCell, TableBody, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
+import React from 'react';
+import { makeStyles } from '@material-ui/styles';
+import { Box, Container, Icon, Typography } from '@material-ui/core';
 
 import Page from "../templates/Page";
 import PointText from '../atoms/PointText';
+import ChronologyParts from '../organisms/ChronologyParts';
 
 import { WOKRS_DATA } from '../static/constants/WorksData';
 
-/**
- * @props : show Boolean
- */
-export default class WorksPage extends Component {
-	constructor (props) {
-		super(props);
-	}
+const useStyles = makeStyles((theme) => ({
+	worksPage: {
+	},
+	content: { marginTop: 100 },
+	title: {
+		marginTop: 60,
+		textAlign: 'center',
+		'& h2': { fontSize: 46, marginBottom: 0 },
+		'& .MuiTypography-caption': { margin: 'auto' }
+	},
+	itemRoot: { flexGrow: 1 }
+}));
 
-	render() {
-		return (
-			<Page inPageKey='works' className="worksPage"> 
-				<TableContainer>
-					<Table aria-label="works table">
-						<TableHead>
-							<TableRow>
-								<TableCell><PointText text='Year' /></TableCell>
-								<TableCell><PointText text='Service' /></TableCell>
-								<TableCell><PointText text='Comment & Skills' /></TableCell>
-								<TableCell>
-									<PointText text='Links' />
-									<Typography variant='caption'>公開可能なソースや作成資料など</Typography>
-								</TableCell>
-							</TableRow>
-						</TableHead>
-						<TableBody>
-							{ WOKRS_DATA.map((item) => (<ChronologyParts item={item} />)) }
-						</TableBody>
-					</Table>
-				</TableContainer>
-			</Page>
-		);
-	}
+export default function WorksPage(props) {
+	const classes = useStyles();
+	return (
+		<Page inPageKey='works'>
+			<Container maxWidth="lg" className={ classes.worksPage }>
+				<Box className={ classes.title }>
+					<Container maxWidth="md">
+						<PointText variant='h2'>
+							WORKS HISTORY
+							<Icon color='secondary'>history</Icon>
+						</PointText>
+						<Typography variant='caption'>
+							これまで私が関わったサービスの内容とスキル、あれば公開可能なソースや作成資料などと共に一覧にしています。
+						</Typography>
+					</Container>
+				</Box>
+				<Box className={ classes.content }>
+					<ul className={ classes.itemRoot }>
+						{ WOKRS_DATA.map((item) => (<ChronologyParts item={item} />)) }
+					</ul>
+				</Box>
+			</Container>
+		</Page>
+	);
 }

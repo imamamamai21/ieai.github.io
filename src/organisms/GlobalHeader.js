@@ -1,7 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
 
 import { MENU } from '../static/constants/Menu';
-
 import HeaderButton from '../modules/HeaderButton';
 
 const useStyles = makeStyles((theme) => ({
@@ -9,7 +8,9 @@ const useStyles = makeStyles((theme) => ({
 		width: '100%',
 		height: '1000px',
 		backgroundColor: '#f4f4f3',
-
+		'& li': {
+			zIndex: 1000
+		},
 		'& li:first-child': {
 			position: 'fixed',
 			top: '40px',
@@ -36,17 +37,18 @@ const useStyles = makeStyles((theme) => ({
 export default function GlobalHeader(props) {
   const classes = useStyles();
 
-	var menu = [MENU.works, MENU.top];
-	delete menu[props.inPageKey];
+	var menu = { works: MENU.works, top: MENU.top};
+	// delete menu[props.inPageKey];
+	// menu[props.inPageKey] = MENU.empty;
 	
   return (
 		<div className={ classes.header }>
 			<div className={ classes.circle } />
 			<ul>
 				{
-					menu.map((item, i) =>(
-						<li key={'headerItem', i}>
-							<HeaderButton menu={ item } />
+					Object.keys(menu).map((key) =>(
+						<li key={'headerItem_', key}>
+							<HeaderButton menu={ menu[key] } />
 						</li>
 					))
 				}

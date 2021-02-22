@@ -5,12 +5,9 @@ import Icon from '@material-ui/core/Icon';
 import PointText from '../atoms/PointText';
 
 import maishintsu from "../static/images/maishintsu.jpg";
-import { SKILLS } from "../static/constants/Skills";
 
 const useStyles = makeStyles((theme) => ({
 	selfIntrodution: {
-		// maxWidth: 600,
-		// margin: 'auto'
 	},
 	img: {
 		margin: 'auto',
@@ -76,9 +73,9 @@ export default function SelfIntroduction() {
 }
 
 const COMMENT = [
-	'私はデザイナー上がりのエンジニアです。',
+	'私はデザイナーからのエンジニアです。',
 	'(といってもデザインの仕事をしていたのは学生時代のデザイン事務所と内定先でのアルバイトの時だけになります)',
 	'もっと『ものづくり』の根本から関わりたいと思い、就職を機に『エンジニア』という職種を選びました。',
-	'エンジニアの世界は広く、足を踏み入れれば踏み入れるほど、多数の可能性が発見できます。',
+	'エンジニアの世界は奥が広く、自身の未熟さを痛感する日々ですが、とても楽しい仕事です。',
 	'0歳と2歳の2人の息子を育てています。'
 ]

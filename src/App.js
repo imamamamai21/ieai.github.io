@@ -1,11 +1,9 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import { withStyles, ThemeProvider } from '@material-ui/styles';
 import { Container, createMuiTheme } from '@material-ui/core';
-// import { createMuiTheme } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import TopPage from './pages/Top';
-import WorksPasswordPage from './pages/WorksPassword';
 import WorksPage from './pages/Works';
 import NotFoundPage from './pages/NotFound';
 
@@ -21,17 +19,7 @@ class App extends Component {
         works: false,
       }
 		};
-    this.onClickMenu = this.onClickMenu.bind(this);
 	}
-
-  onClickMenu(key) {
-    this.setState({ showPage: {
-      top: (key === 'top'),
-      profile: (key === 'profile'),
-      works: (key === 'works')
-    }});
-    console.log(this.state.showPage)
-  }
 
 	render() {
     const classes = this.props.classes;
@@ -41,8 +29,8 @@ class App extends Component {
           <Router>
             <Switch>
               <Route exact path={MENU.top.uri} component={ TopPage }/>
-              <Route path={MENU.works.uri} component={ WorksPasswordPage }/>
-              <Route path={MENU.myworks.uri} component={ WorksPage }/>
+              {/* <Route path={MENU.works.uri} component={ WorksPasswordPage }/> */}
+              <Route path={MENU.works.uri} component={ WorksPage }/>
               <Route component={ NotFoundPage }/>
             </Switch>
           </Router>
@@ -54,10 +42,10 @@ class App extends Component {
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#350026'
+      main: '#350052'
     },
     secondary: {
-      main: '#EAF400'
+      main: '#FF6D00'
     }
   }
 });

@@ -1,12 +1,12 @@
 import { makeStyles } from '@material-ui/styles';
 import { Icon, Button, Typography } from '@material-ui/core';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 import PointText from "../atoms/PointText";
 
 const useStyles = makeStyles((theme) => ({
 	link: {
-		textDecoration: 'none'
+		textDecoration: 'none',
 	}, button: {
 		padding: '16px',
 		alignItems: 'baseline',

@@ -1,113 +1,107 @@
 import { makeStyles } from '@material-ui/styles';
-import { Container, Grid, Box } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 
-import { MENU } from '../static/constants/Menu';
+// Icons
+import BuildIcon from '@material-ui/icons/Build';
+import HistoryIcon from '@material-ui/icons/History';
+import AssignmentIcon from '@material-ui/icons/Assignment';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
+// Atoms
 import PointText from "../atoms/PointText";
-import GlobalHeader from '../organisms/GlobalHeader';
+import SkillIcon from "../atoms/SkillIcon";
+import GotoButton from "../atoms/GotoButton";
+
+// Modules
+import TopIcons from "../modules/TopIcons";
+import ImageScrolling from '../modules/ImageScrolling';
+
+// Organisms
 import SelfIntroduction from '../organisms/SelfIntroduction';
 import PersonalHistory from '../organisms/PersonalHistory';
+
+// Templates
 import Page from "../templates/Page";
 
-import topTitle from "../static/images/topTitle.png";
-import pointCircle from "../static/images/pointCircle.png";
-import { SKILLS } from "../static/constants/Skills";
+// Data
+import { SKILL_ICONS } from "../static/constants/Skills";
+import { WOKRS_DATA } from "../static/constants/WorksData";
 
 const useStyles = makeStyles((theme) => ({
-	topPage: { 
-	},
-	topTitle: {
-		display: 'block',
-		marginBlockStart: '0.5em',
-		marginBlockEnd: '0.2em',
-		'& img': {
-			width: '460px'
-		}
-	},
-	line: {
-		width: '100%',
-		marginBottom: '16px',
-		borderBottom: '3px solid #350026'
-	},
-	text: {
-		fontFamily: `'Odibee Sans', cursive`,
-		fontSize: '18px',
-		width: '600px'
-	},
 	content: {
 		margin: '80px auto',
-		maxWidth: 600
+		maxWidth: 800,
+		alignItems: 'center'
 	},
-	skillContent: {
-		backgroundImage: `url(${pointCircle})`,
-		backgroundPosition: 'initial',
-    backgroundSize: '140px',
-    backgroundRepeat: 'no-repeat',
-    height: '300px',
-		width: '600px',
-		'& .contentText': {
-			padding: '18px 0 0 100px',
-			'& p': {
-				fontSize: '16px',
-				width: '440px'
-			}
-		}
+	topContent: {
+		width: 'auto',
+		margin: '-100px auto -50px'
 	},
-	leftMenu: { '& a': { float: 'right' } }
+	title: {
+		paddingBottom: 14,
+		'& h6': { marginTop: 60, fontSize: '24px' },
+		'& .MuiSvgIcon-root': { verticalAlign: 'middle', marginLeft: 8 }
+	},
+	overContent: { margin: '18px -200px' }
 }));
 
 export default function TopPage(props) {
   const classes = useStyles();
-	const item = props.item;
-	console.log('item===',props.item)
+	
   return (
 		<Page className={classes.topPage} inPageKey='top'>
-			<Grid
-				container
-				direction="row"
-				justify="center"
-				alignItems="center"
-			>
-				<h1 className={classes.topTitle}>
-					<img src={topTitle} alt="MaiShintsu Portforio" />
-				</h1>
-				<PointText
-					text='This SITE use : JavaScript / React /  React-Router / material-ui / Github Pages / AtomicDesign / illustrator'
-				/>			
+			<Grid container className={ classes.content }>
+				<Grid container className={ classes.topContent }>
+					<TopIcons />		
+				</Grid>
 			</Grid>
-			<Grid
-				container
-				direction="row"
-				ju-tify="center"
-				alignItems="center"
-				className={classes.content}
-			>
-				<Box className={classes.skillContent}>
-					<div className='contentText'>
-						<PointText text={`My Skills >>>>>>>>>`} />
-						{
-							SKILLS.map((skill) => <PointText text={skill} />)
-						}
-					</div>
-				</Box>
-			</Grid>
-			<Grid
-				container
-				direction="row"
-				ju-tify="center"
-				alignItems="center"
-				className={classes.content}
-			>
+			<Grid container className={ classes.content }>
+				<div className={ classes.title }>
+					<PointText>
+						MY NAME IS .
+						<AccountCircleIcon color='secondary' />
+					</PointText>
+				</div>
 				<SelfIntroduction />
 			</Grid>
-			<Grid
-				container
-				direction="row"
-				ju-tify="center"
-				alignItems="center"
-				className={classes.content}
-			>
+			<Grid container className={ classes.content }> {/******** 経歴 ********/}
+				<div className={ classes.title }>
+					<PointText>
+						PERSONAL HISTORY
+						<HistoryIcon color='secondary' />
+					</PointText>
+				</div>
 				<PersonalHistory />
+			</Grid>
+			<Grid container className={ classes.content }> {/******** スキル ********/}
+				<div className={ classes.title }>
+					<PointText>
+						MY SKILLS
+						<BuildIcon color='secondary' />
+					</PointText>
+				</div>
+				<Grid container spacing={4} justify='left'>
+					{ Object.keys(SKILL_ICONS).map((key) => (
+						<SkillIcon skill={SKILL_ICONS[key]} />
+					)) }
+				</Grid>
+			</Grid>
+			<Grid container className={ classes.content }> {/******** 仕事履歴 ********/}
+				<div className={ classes.title }>
+					<PointText>
+						WORKS HISTORY
+						<AssignmentIcon color='secondary' />
+					</PointText>
+					<Typography variant='body2'>
+						関わってきた仕事の履歴を一覧にまとめました。
+					</Typography>
+				</div>
+				<div className={ classes.overContent }>
+					<ImageScrolling data={ WOKRS_DATA.map((data) => (
+						{ img: data.service.icon, title: data.service.name, subtitle: data.service.content }
+					))} />
+				</div>
+				<GotoButton link='works' title='仕事履歴へ' />
 			</Grid>
 		</Page>
   );

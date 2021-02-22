@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
 import { TextField, Container, Button, Typography, Box } from '@material-ui/core';
 
-import Header from '../organisms/Header';
 import Page from "../templates/Page";
 import PointText from "../atoms/PointText";
 
@@ -39,15 +38,15 @@ class WorksPasswordPage extends Component {
 						fullWidth
 						onChange={this.inputPass}
 						/>
-					<Button 
-						variant="contained" 
-						color="primary"
-						className={classes.button}
-						>
-						<Link to={this.state.inputText}>
-							<Typography variant="button" display="block" gutterBottom>OK</Typography>
-						</Link>
-					</Button>
+					<Link to={this.state.inputText}>
+						<Button 
+							variant="contained" 
+							color="primary"
+							className={classes.button}
+							>
+								<Typography variant="button" display="block" gutterBottom>OK</Typography>
+						</Button>
+					</Link>
 				</Container>
 			</Page>
 		)

@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import { Link } from 'react-router-dom';
-import { Container, Button, Typography } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 
 import Page from '../templates/Page';
 import PointText from '../atoms/PointText';
