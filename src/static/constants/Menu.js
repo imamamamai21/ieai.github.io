@@ -12,7 +12,7 @@ export const MENU = {
     title: 'PROFILE',
     uri: '/portfolio/profile'
   },
-  works:{
+  works: {
     key: 'works',
     content: '仕事履歴',
     title: 'WORKS',
@@ -29,6 +29,12 @@ export const MENU = {
     key: 'notfound',
     content: 'ページが見つかりません',
     title: 'NOT FOUND PAGE',
+    uri: ''
+  },
+  empty:{
+    key: '',
+    content: '',
+    title: '',
     uri: ''
   }
 }
