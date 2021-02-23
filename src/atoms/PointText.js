@@ -21,7 +21,7 @@ export default function PointText(props) {
 			variant={ props.variant || "subtitle2" }
 			gutterBottom
 			className={ classes.text }
-			color={ props.color || 'primary' }
+			color={ props.color || 'secondary' }
 		>
 			{ props.text || props.children }
 		</Typography>

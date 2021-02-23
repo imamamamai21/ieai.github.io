@@ -2,16 +2,16 @@ import { makeStyles } from '@material-ui/styles';
 import { Icon, Button, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
-import PointText from "../atoms/PointText";
+import PointText from '../atoms/PointText';
 
 const useStyles = makeStyles((theme) => ({
 	link: {
-		textDecoration: 'none',
+		textDecoration: 'none'
 	}, button: {
 		padding: '16px',
 		alignItems: 'baseline',
 		'& h6': {
-			fontSize: '18px',
+			fontSize: '18px'
 		},
 		'& .MuiTypography-root': {
 			marginLeft: '8px'
@@ -28,9 +28,11 @@ export default function HeaderButton(props) {
   return (
 		<Link to={props.menu.uri} className={classes.link}>
 			<Button className={classes.button}>
-				<Icon color='secondary'>{props.menu.icon}</Icon>
+				<Icon color='primary'>{props.menu.icon}</Icon>
         <PointText text={props.menu.title}/>
-				<Typography color='primary' variant="caption" display="block" gutterBottom>{props.menu.content}</Typography>
+				<Typography color='secondary' variant='caption' display='block' gutterBottom>
+					{ props.menu.content }
+				</Typography>
       </Button>
 		</Link>
   );

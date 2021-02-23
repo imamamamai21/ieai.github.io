@@ -7,20 +7,14 @@ const useStyles = makeStyles((theme) => ({
 	header: {
 		width: '100%',
 		height: '1000px',
-		backgroundColor: '#f4f4f3',
+		backgroundColor: theme.palette.info.main,
 		'& li': {
+			position: 'fixed',
+			top: '40px',
 			zIndex: 1000
 		},
-		'& li:first-child': {
-			position: 'fixed',
-			top: '40px',
-			left: '40px'
-		},
-		'& li:last-child': {
-			position: 'fixed',
-			top: '40px',
-			right: '40px'
-		}
+		'& li:first-child': { left: '40px' },
+		'& li:last-child': { right: '40px' }
 	},
 	circle: {
 		display: 'inline-block',

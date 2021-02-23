@@ -6,7 +6,7 @@ import PointText from '../atoms/PointText';
 const useStyles = makeStyles((theme) => ({
 	items: {
 		'& h6': {
-			fontSize: '16px',
+			fontSize: 16,
 			textAlign: 'right'
 		}
 	}

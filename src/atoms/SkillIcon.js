@@ -7,11 +7,12 @@ const useStyles = makeStyles((theme) => ({
 	skillIcon: {
     width: 50,
     '& img': {
+      marginBottom: 8,
       borderRadius: '50%',
       width: 50,
       height: 50,
       objectFit: 'cover',
-      border: '1px solid #FF6D00',
+      border: `1px solid ${ theme.palette.primary.light }`,
       margin: '0 auto',
       display: 'block'
     },

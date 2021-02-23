@@ -19,21 +19,15 @@ const useStyles = makeStyles((theme) => ({
 		}
 	},
 	serviceContent: {
-		'& h6': { fontSize: '24px' }
+		'& h6': { fontSize: 24 }
 	},
 	serviceIcon: {
 		margin: 'auto',
 		display: 'block',
 		maxWidth: '200px'
 	},
-	profLink: {
-		paddingLeft: '16px',
-		'& .material-icons': {
-			fontSize: '16px',
-			padding: '0 4px 0 0'
-		}
-	},
-	openIcon: { fontSize: '12px' },
+	openIcon: { fontSize: 12 },
+	sourceLink: { fontSize: 11 },
 	skillRoot: {
     flexGrow: 1,
 		padding: '32px 0',
@@ -71,7 +65,7 @@ export default function ChronologyParts(props) {
 					<Grid container className={classes.skillRoot} spacing={2}>
 						<Grid item xs={12}>
 						<PointText text='Skills used' />
-							<Grid container justify="left" spacing={4}>
+							<Grid container justify='left' spacing={4}>
 								{/* スキル */
 								item.skills.map((skill, i) => <SkillIcon skill={ skill } />)
 								}
@@ -83,11 +77,11 @@ export default function ChronologyParts(props) {
 				<Grid item xs='2'>{/* ソース */}
 					<Box className={ classes.contentBox }>
 						{(item.sources.length === 0) ? 
-							<Typography variant='subtitle2' /> :
+							<span /> :
 							item.sources.map((source) => {
 								return (<Link href={source.uri} target='_blank'>
-									<Typography variant='subtitle2'>
-										<Icon className={classes.openIcon}>open_in_new</Icon>{ source.title }
+									<Typography variant='subtitle2' color='secondary' className={classes.sourceLink}>
+										<Icon className={classes.openIcon} color='primary'>open_in_new</Icon>{ source.title }
 									</Typography>
 								</Link>)
 							})}

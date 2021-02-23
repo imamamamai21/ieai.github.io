@@ -53,7 +53,7 @@ export default function ImageScrolling(props) {
             <img src={data.img} alt={ data.title } />
             <GridListTileBar
               title={data.title}
-							subtitle={ data.subtitle }
+              subtitle={ data.subtitle }
               classes={{
                 root: classes.titleBar,
                 title: classes.title,

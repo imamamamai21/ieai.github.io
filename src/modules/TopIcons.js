@@ -1,9 +1,9 @@
 import { makeStyles } from '@material-ui/styles';
 import { Box } from '@material-ui/core';
 
-import PointText from "../atoms/PointText";
-import CircleText from "../atoms/CircleText";
-import topLogo from "../static/images/topLogo.png";
+import PointText from '../atoms/PointText';
+import CircleText from '../atoms/CircleText';
+import topLogo from '../static/images/topLogo.png';
 
 const useStyles = makeStyles((theme) => ({
 	topIcons:{
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	topLogo: {
 		'& img': {
-			width: '280px',
+			width: 280,
 			objectFit: 'contain',
 		}
 	},
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 		position: 'absolute', top: 0, left: 0,
 		animation: `$spin infinite 200s`,
 		'& span': {
-			color: `${ theme.palette.secondary.light }`,
+			color: `${ theme.palette.primary.light }`,
 			fontSize: 20
 		}
 	},
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 		textAlign: 'center',
 		width: 360,
 		'& :first-child': {
-			marginBottom: '20px',
+			marginBottom: 20,
 			color: theme.palette.secondary.dark
 		}
 	},
@@ -48,8 +48,8 @@ const useStyles = makeStyles((theme) => ({
 		position: 'absolute',
 		left: '-6px',
 		top: '-6px',
-		borderColor: theme.palette.secondary.light,
-		borderWidth: '2px',
+		borderColor: theme.palette.primary.light,
+		borderWidth: 2,
 		borderStyle: 'solid',
 		borderRadius: '50%'
 	}
@@ -65,7 +65,7 @@ export default function TopIcons(props) {
 			<Box className={ classes.topIcons }>
 				<Box className={ classes.iconBox }>
 					<h1 className={classes.topLogo}>
-						<img src={topLogo} alt="MaiShintsu" />
+						<img src={topLogo} alt='MaiShintsu' />
 					</h1>
 				</Box>
 				<Box className={ classes.textBox }>

@@ -11,7 +11,7 @@ export default function CircleText(props) {
 	const textAry = props.text.split('');
 
 	// 要素の角度
-  const getDivrotate = function(i) { return (360 / props.text.length) * i };
+	const getDivrotate = function(i) { return (360 / props.text.length) * i };
 
 	const classes = makeStyles((theme) => ({
 		circleText: {
@@ -30,7 +30,7 @@ export default function CircleText(props) {
 		}
 	}))();
 
-  return (
+	return (
 		<Box className={classes.circleText}>
 			{
 			textAry.map((text, i) => (
@@ -41,5 +41,5 @@ export default function CircleText(props) {
 			))
 			}
 		</Box>
-  );
+	);
 }

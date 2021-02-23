@@ -15,12 +15,12 @@ export default function NotFoundPage(props) {
 	const classes = useStyles();
 	return (
 		<Page class='notFoundPage' inPageKey='notFound'>
-			<Container maxWidth="sm" className={classes.root}>
-				<PointText text="404 Not Found." />
-				<Typography variant="body2" color="textSecondary">
+			<Container maxWidth='sm' className={classes.root}>
+				<PointText text='404 Not Found.' />
+				<Typography variant='body2' color='textSecondary'>
 					申し訳ありません。ページが見つかりません。
 				</Typography>
-				<Typography variant="body2" color="textSecondary">
+				<Typography variant='body2' color='textSecondary'>
 					戻って再度お試しください。
 				</Typography>
 			</Container>

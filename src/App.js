@@ -41,16 +41,11 @@ class App extends Component {
 }
 const theme = createMuiTheme({
   palette: {
-    primary: {
-      main: '#350052'
-    },
-    secondary: {
-      main: '#FF6D00'
-    }
+    primary: { main: '#FF6D00' },
+    secondary: { main: '#350052' },
+    info: { main: '#f4f4f3' }
   }
 });
 export default withStyles({
-  root: {
-    padding: '0'
-  }
+  root: { padding: 0 }
 })(App);

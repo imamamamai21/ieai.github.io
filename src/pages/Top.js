@@ -8,12 +8,12 @@ import AssignmentIcon from '@material-ui/icons/Assignment';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 // Atoms
-import PointText from "../atoms/PointText";
-import SkillIcon from "../atoms/SkillIcon";
-import GotoButton from "../atoms/GotoButton";
+import PointText from '../atoms/PointText';
+import SkillIcon from '../atoms/SkillIcon';
+import GotoButton from '../atoms/GotoButton';
 
 // Modules
-import TopIcons from "../modules/TopIcons";
+import TopIcons from '../modules/TopIcons';
 import ImageScrolling from '../modules/ImageScrolling';
 
 // Organisms
@@ -21,11 +21,11 @@ import SelfIntroduction from '../organisms/SelfIntroduction';
 import PersonalHistory from '../organisms/PersonalHistory';
 
 // Templates
-import Page from "../templates/Page";
+import Page from '../templates/Page';
 
 // Data
-import { SKILL_ICONS } from "../static/constants/Skills";
-import { WOKRS_DATA } from "../static/constants/WorksData";
+import { SKILL_ICONS } from '../static/constants/Skills';
+import { WOKRS_DATA } from '../static/constants/WorksData';
 
 const useStyles = makeStyles((theme) => ({
 	content: {
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	title: {
 		paddingBottom: 14,
-		'& h6': { marginTop: 60, fontSize: '24px' },
+		'& h6': { marginTop: 60, fontSize: 24 },
 		'& .MuiSvgIcon-root': { verticalAlign: 'middle', marginLeft: 8 }
 	},
 	overContent: { margin: '18px -200px' }
@@ -59,7 +59,7 @@ export default function TopPage(props) {
 				<div className={ classes.title }>
 					<PointText>
 						MY NAME IS .
-						<AccountCircleIcon color='secondary' />
+						<AccountCircleIcon color='primary' />
 					</PointText>
 				</div>
 				<SelfIntroduction />
@@ -68,7 +68,7 @@ export default function TopPage(props) {
 				<div className={ classes.title }>
 					<PointText>
 						PERSONAL HISTORY
-						<HistoryIcon color='secondary' />
+						<HistoryIcon color='primary' />
 					</PointText>
 				</div>
 				<PersonalHistory />
@@ -77,7 +77,7 @@ export default function TopPage(props) {
 				<div className={ classes.title }>
 					<PointText>
 						MY SKILLS
-						<BuildIcon color='secondary' />
+						<BuildIcon color='primary' />
 					</PointText>
 				</div>
 				<Grid container spacing={4} justify='left'>
@@ -90,7 +90,7 @@ export default function TopPage(props) {
 				<div className={ classes.title }>
 					<PointText>
 						WORKS HISTORY
-						<AssignmentIcon color='secondary' />
+						<AssignmentIcon color='primary' />
 					</PointText>
 					<Typography variant='body2'>
 						関わってきた仕事の履歴を一覧にまとめました。

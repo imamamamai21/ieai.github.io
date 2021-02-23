@@ -2,11 +2,11 @@ import { makeStyles } from '@material-ui/styles';
 import { Box } from '@material-ui/core';
 import { Link } from 'react-router-dom'
 
-import PointText from "./PointText";
+import PointText from './PointText';
 
 const useStyles = makeStyles((theme) => ({
 	gotoButton: {
-		margin: '32px',
+		margin: 32,
 		width: '100%',
 		height: 24,
 		textAlign: 'center',
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 			right: 0,
 			bottom: 9,
 			borderTop: '20px solid transparent',
-			borderLeft: '30px solid #FF6D00',
+			borderLeft: `30px solid ${ theme.palette.primary.main }`,
 			borderBottom: '20px solid transparent'
 		},
 		'&:hover .triangle': {
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 			right: 20,
 			bottom: 28,
 			width: 40,
-			borderBottom: '2px solid #350052',
+			borderBottom: `2px solid ${ theme.palette.secondary.light }`,
 		},
 		'&:hover .line': {
 			right: '-10px',
