@@ -11,6 +11,12 @@ export const SKILL_ICONS = {
   }, atomicDesign: {
     name: 'Atomic Design',
     icon: 'https://www.kaitoy.xyz/images/atomic-design.png'
+  }, redux: {
+    name: 'Redux',
+    icon: 'https://i1.wp.com/cdn-images-1.medium.com/max/1600/1*Vo5RDpNkOsfDn8sx06mthA.png?ssl=1'
+  }, flux: {
+    name: 'Flux',
+    icon: 'https://static.thenounproject.com/png/300489-200.png'
   }, node: {
     name: 'Node.js',
     icon: 'https://ifelse.sakura.ne.jp/blog/wp-content/uploads/img-nodejs-01-eye.jpg'

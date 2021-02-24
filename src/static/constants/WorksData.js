@@ -131,10 +131,12 @@ export const WOKRS_DATA = [
 		comments: [
 			'「新規動画事業を始める」と誘われ、モックを作る段階から関わることができました。',
 			'初めてネイティブアプリ制作に関わったサービスです。',
+			'この頃Swiftが出始めた時期でしたので、Swiftを取り入れることとなりました。',
+			'MVC止まりだったので、Fluxの設計概念を理解するのにとても苦労した記憶があります。',
 			'iOSはライブラリを多く活用でき、未熟ながら自分自身もライブラリをいくつか作っていました。(右リンク)'
 		],
 		skills: [
-			SKILL_ICONS.swift, SKILL_ICONS.rxSwift, SKILL_ICONS.typeScript, SKILL_ICONS.objectiveC
+			SKILL_ICONS.swift, SKILL_ICONS.rxSwift, SKILL_ICONS.typeScript, SKILL_ICONS.objectiveC, SKILL_ICONS.redux, SKILL_ICONS.flux
 		],
 		sources: [
 			{title: '[Git]ScaledVisibleCellsCollectionView', uri: 'https://github.com/ikemai/ScaledVisibleCellsCollectionView'},
