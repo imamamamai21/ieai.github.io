@@ -2,6 +2,9 @@ export const SKILL_ICONS = {
   nuxt: {
     name: 'nuxt.js',
     icon: 'https://developers-book.com/wp-content/uploads/2020/07/nuxt-icon.png'
+  }, vue: {
+    name: 'vue.js',
+    icon: 'https://jp.vuejs.org/images/logo.png'
   }, storybook: {
     name: 'Storybook',
     icon: 'https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png'
