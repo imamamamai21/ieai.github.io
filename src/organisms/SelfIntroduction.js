@@ -4,7 +4,7 @@ import Icon from '@material-ui/core/Icon';
 
 import PointText from '../atoms/PointText';
 
-import maishintsu from "../static/images/maishintsu.jpg";
+import maiImage from "../static/images/maiImage.png";
 
 const useStyles = makeStyles((theme) => ({
 	selfIntrodution: {
@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme) => ({
 	img: {
 		margin: 'auto',
 		display: 'block',
-		height: '220px',
+		height: '200px',
+		borderRadius: '50%'
 	}, name: {
 		'& span': {
 			fontSize: '12px',
@@ -42,9 +43,9 @@ export default function SelfIntroduction() {
   const classes = useStyles();
   return (
 		<Container maxWidth='m' className={classes.selfIntrodution}>
-			<Grid className='selfIntroduction' container spacing={4}>
+			<Grid className='selfIntroduction' container spacing={8}>
 				<Grid item>
-					<img className={classes.img} alt='photo' src={ maishintsu　}/>
+					<img className={classes.img} alt='photo' src={maiImage}/>
 				</Grid>
 				<Grid item xs={12} sm container>
 					<Grid item xs container direction='column' spacing={2}>

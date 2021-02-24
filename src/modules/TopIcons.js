@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/styles';
-import { Box } from '@material-ui/core';
+import { Box, Link } from '@material-ui/core';
 
 import PointText from '../atoms/PointText';
 import CircleText from '../atoms/CircleText';
@@ -34,8 +34,11 @@ const useStyles = makeStyles((theme) => ({
 		textAlign: 'center',
 		width: 360,
 		'& :first-child': {
-			marginBottom: 20,
-			color: theme.palette.secondary.dark
+			marginBottom: 7,
+			color: theme.palette.primary.main
+		},
+		'& a': {
+			fontSize: 12
 		}
 	},
 	'@keyframes spin': {
@@ -68,12 +71,6 @@ export default function TopIcons(props) {
 						<img src={topLogo} alt='MaiShintsu' />
 					</h1>
 				</Box>
-				<Box className={ classes.textBox }>
-					<PointText text='This SITE to use' />
-					<PointText
-							text='React.js /  React-Router / material-ui / Github Pages / AtomicDesign / illustrator'
-					/>
-				</Box>
 				<Box className={ classes.circleBox }>
 					<CircleText
 						text='HELLO! My name is MAI SHINTSU. This site introduces me and the work I have been involved in.'
@@ -81,6 +78,15 @@ export default function TopIcons(props) {
 					/>
 				</Box>
 				<Box className={ classes.circle } />
+				<Box className={ classes.textBox }>
+					<PointText text='This SITE to use' />
+					<PointText
+							text='React.js /  React-Router / material-ui / Github Pages / AtomicDesign / illustrator / Photoshop'
+					/>
+					<Link href='https://github.com/imamamamai21/portfolio' target='_blank'>
+						See the code for this site [Github]
+					</Link>
+				</Box>
 			</Box>
 		</Box>
   );
