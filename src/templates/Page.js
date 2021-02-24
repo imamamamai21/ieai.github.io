@@ -19,9 +19,9 @@ class Page extends Component {
     return (
 			<Container className={ classes.page }>
 				<GlobalHeader inPageKey={ this.props.inPageKey } />
-				<div className={ classes.pageContent }>
+				<Container maxWidth='md' className={ classes.pageContent }>
 					{ this.props.children }
-				</div>
+				</Container>
 			</Container>
     )
   }
@@ -35,6 +35,6 @@ export default withStyles({
 	pageContent: {
 		margin: '40px auto',
 		marginTop: '-900px',
-    paddingBottom: '120px'
+		display: 'flow-root'
 	}
 })(withRouter(Page));

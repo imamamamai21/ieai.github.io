@@ -30,7 +30,6 @@ import { WOKRS_DATA } from '../static/constants/WorksData';
 const useStyles = makeStyles((theme) => ({
 	content: {
 		margin: '80px auto',
-		maxWidth: 800,
 		alignItems: 'center'
 	},
 	topContent: {
@@ -41,15 +40,14 @@ const useStyles = makeStyles((theme) => ({
 		paddingBottom: 14,
 		'& h6': { marginTop: 60, fontSize: 24 },
 		'& .MuiSvgIcon-root': { verticalAlign: 'middle', marginLeft: 8 }
-	},
-	overContent: { margin: '18px -200px' }
+	}
 }));
 
 export default function TopPage(props) {
   const classes = useStyles();
 	
   return (
-		<Page className={classes.topPage} inPageKey='top'>
+		<Page inPageKey='top'>
 			<Grid container className={ classes.content }>
 				<Grid container className={ classes.topContent }>
 					<TopIcons />		
@@ -96,11 +94,9 @@ export default function TopPage(props) {
 						関わってきた仕事の履歴を一覧にまとめました。
 					</Typography>
 				</div>
-				<div className={ classes.overContent }>
-					<ImageScrolling data={ WOKRS_DATA.map((data) => (
-						{ img: data.service.icon, title: data.service.name, subtitle: data.service.content }
-					))} />
-				</div>
+				<ImageScrolling data={ WOKRS_DATA.map((data) => (
+					{ img: data.service.icon, title: data.service.name, subtitle: data.service.content }
+				))} />
 				<GotoButton link='works' title='仕事履歴へ' />
 			</Grid>
 		</Page>

@@ -19,7 +19,7 @@ export const WOKRS_DATA = [
 			'デザインはAtomicDesignを元に設計をすることで、多数の人がいじってもくずれにくい設計になっています。'
 		],
 		skills: [
-			SKILL_ICONS.nuxt, SKILL_ICONS.storybook, SKILL_ICONS.atomicDesign
+			SKILL_ICONS.nuxt, SKILL_ICONS.vue, SKILL_ICONS.storybook, SKILL_ICONS.atomicDesign
 		],
 		sources: [
 			{ uri: 'https://github.com/imamamamai21/Nuxt_Vue_Storybook_Atomic', title: '[Git]Nuxt_Vue_Storybook_Atomic' }
