@@ -4,18 +4,17 @@
 以下の言語を使って作られています。
 
 ## SKILLS
-- フロントエンド
+### フロントエンド
  - React.js /  React-Router / material-ui / Create React App
 
-- 設計
+### 設計
  - AtomicDesign
 
-- デザインソフト
+### デザインソフト
  - illustrator / Photoshop
 
 ## Github Pages
 https://imamamamai21.github.io/portfolio/
-上記リンクからサイトに飛べます。
 
 `Docs`ディレクトリに完成htmlをつっこんでいます。
 `npm run build`実行でディレクトリと各種ファイルを作成します。
