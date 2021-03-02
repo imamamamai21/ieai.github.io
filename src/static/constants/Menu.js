@@ -2,7 +2,7 @@ export const MENU = {
   top: {
     key: 'top',
     content: 'PORTFOLIO',
-    title: 'MAI SHINTSU',
+    title: 'TOP',
     uri: '/portfolio/',
     icon: 'adjust'
   },
