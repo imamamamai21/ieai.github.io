@@ -1,27 +1,82 @@
-import { makeStyles } from '@material-ui/styles';
-import { Box, Link } from '@material-ui/core';
+import { Component } from 'react'
+import { withRouter } from 'react-router-dom'
+import { withStyles } from '@material-ui/styles'
+import { Container, Box, Link } from '@material-ui/core'
+import Measure from 'react-measure'
 
-import PointText from '../atoms/PointText';
-import CircleText from '../atoms/CircleText';
-import topLogo from '../static/images/topLogo.png';
+import PointText from '../atoms/PointText'
+import CircleText from '../atoms/CircleText'
+import topLogo from '../static/images/topLogo.png'
 
-const useStyles = makeStyles((theme) => ({
+/**
+ * Topイメージimport { Component } from 'react';
+ */
+class TopIcons extends Component {
+	state = {
+    dimensions: { width: -1, height: -1 }
+  }
+
+	render() {
+		const { width, height } = this.state.dimensions
+		const classes = this.props.classes
+		return (
+			<Measure
+        bounds
+        onResize={contentRect => {
+          this.setState({ dimensions: contentRect.bounds })
+        }}
+      >
+				{({ measureRef }) => (
+					<Container ref={ measureRef } maxWidth="sm" className={ classes.topIcons } style={{ height: width }}>
+						<Box className={ classes.circleBox }>
+							<CircleText
+								text='HELLO! My name is MAI SHINTSU. This site introduces me and the work I have been involved in.'
+								size={ width - 4 }
+							/>
+						</Box>
+						<Box className={ classes.iconBox }>
+							<h1 className={classes.topLogo}>
+								<img src={topLogo} alt='MaiShintsu' />
+							</h1>
+							<Box className={ classes.textBox }>
+								<PointText text='This SITE to use' />
+								<PointText
+										text='React.js /  React-Router / material-ui / Github Pages / AtomicDesign / illustrator / Photoshop'
+										fontSize={14}
+								/>
+								<Link href='https://github.com/imamamamai21/portfolio' target='_blank'>
+									See the code for this Github
+								</Link>
+							</Box>
+						</Box>
+					</Container>
+        )}
+				
+			</Measure>
+		)
+	}
+}
+
+export default withStyles((theme) => ({
 	topIcons:{
 		position: 'relative',
-		width: 560,
-		height: 560,
-		margin: 'auto'
+		margin: 'auto',
+		borderColor: theme.palette.primary.light,
+		borderWidth: 2,
+		borderStyle: 'solid',
+		borderRadius: '50%'
 	},
 	topLogo: {
 		'& img': {
-			width: 280,
+			width: '100%',
 			objectFit: 'contain',
 		}
 	},
 	iconBox: {
-		position: 'absolute', top: 55, left: 136
+		position: 'absolute', top: '3%', left: '18%', right: '18%', bottom: '8%'
 	},
 	circleBox: {
+		flex: 1,
 		position: 'absolute', top: 0, left: 0,
 		animation: `$spin infinite 200s`,
 		'& span': {
@@ -30,12 +85,11 @@ const useStyles = makeStyles((theme) => ({
 		}
 	},
 	textBox: {
-		position: 'absolute', bottom: 50, left: 97,
+		position: 'absolute', bottom: 0, left: 0, right: 0,
 		textAlign: 'center',
-		width: 360,
 		'& :first-child': {
 			marginBottom: 7,
-			color: theme.palette.primary.main
+			color: theme.palette.primary.light
 		},
 		'& a': {
 			fontSize: 12
@@ -46,48 +100,14 @@ const useStyles = makeStyles((theme) => ({
 		'100%': { transform: 'rotate(360deg)' }
 	},
 	circle: {
-		width: 570,
-		height: 570,
+		width: '100%',
+		resizeMode: 'contain',
 		position: 'absolute',
-		left: '-6px',
-		top: '-6px',
+		left: 0,
+		top: 0,
 		borderColor: theme.palette.primary.light,
 		borderWidth: 2,
 		borderStyle: 'solid',
 		borderRadius: '50%'
 	}
-}));
-
-/**
- * Topイメージ
- */
-export default function TopIcons(props) {
-  const classes = useStyles();
-  return (
-		<Box>
-			<Box className={ classes.topIcons }>
-				<Box className={ classes.iconBox }>
-					<h1 className={classes.topLogo}>
-						<img src={topLogo} alt='MaiShintsu' />
-					</h1>
-				</Box>
-				<Box className={ classes.circleBox }>
-					<CircleText
-						text='HELLO! My name is MAI SHINTSU. This site introduces me and the work I have been involved in.'
-						size='560px'
-					/>
-				</Box>
-				<Box className={ classes.circle } />
-				<Box className={ classes.textBox }>
-					<PointText text='This SITE to use' />
-					<PointText
-							text='React.js /  React-Router / material-ui / Github Pages / AtomicDesign / illustrator / Photoshop'
-					/>
-					<Link href='https://github.com/imamamamai21/portfolio' target='_blank'>
-						See the code for this site [Github]
-					</Link>
-				</Box>
-			</Box>
-		</Box>
-  );
-}
+}))(withRouter(TopIcons));

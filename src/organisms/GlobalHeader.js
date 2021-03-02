@@ -13,8 +13,8 @@ const useStyles = makeStyles((theme) => ({
 			top: '40px',
 			zIndex: 1000
 		},
-		'& li:first-child': { left: '40px' },
-		'& li:last-child': { right: '40px' }
+		'& li:first-child': { left: '4%' },
+		'& li:last-child': { right: '4%' }
 	},
 	circle: {
 		display: 'inline-block',
