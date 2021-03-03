@@ -82,11 +82,9 @@ export default function TopPage(props) {
 						</Typography>
 					</div>
 					<Grid container justify="left" spacing={4}>
-						{/* <Grid item xs={12} spacing={4}> */}
-							{ Object.keys(SKILL_ICONS).map((key) => (
-								<SkillIcon skill={SKILL_ICONS[key]} />
-							)) }
-						{/* </Grid> */}
+						{ Object.keys(SKILL_ICONS).map((key) => (
+							<SkillIcon skill={SKILL_ICONS[key]} />
+						)) }
 					</Grid>
 				</Grid>
 				<Grid item xs={12} className={ classes.content }> {/******** 仕事履歴 ********/}
