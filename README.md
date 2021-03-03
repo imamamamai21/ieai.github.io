@@ -13,6 +13,18 @@
 ### デザインソフト
  - illustrator / Photoshop
 
+
+## 主なライブラリ
+- [material-ui](https://material-ui.com/)
+  - cssのデザインの基礎を作ってくれています。
+
+- [react-measure](https://github.com/souporserious/react-measure)
+  - 画面のサイズを取ってくれます。
+
+- [React Router](https://reactrouter.com/)
+  - SPAでのルート管理といえばの定番ライブラリです。
+
+
 ## Github Pages
 https://imamamamai21.github.io/portfolio/
 
